@@ -1,11 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
 html{
     font-size: 63%;
-    /* 10px and default 1rem=16px */
 }
 
 .title{
@@ -19,12 +13,6 @@ html{
     word-spacing: 16px;
     letter-spacing: 4px;
 }
-@keyframes blinker {
-    25% {
-      opacity: 0;
-    }
-}
-
 #command {
     font-weight: 800;
     font-size: 50px;
@@ -41,7 +29,6 @@ html{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
     padding: 1px;
     border-bottom: black solid .2px;
     height: 800px;
@@ -104,10 +91,6 @@ html{
 
 .row3 h3{
    font-size: 48px;
-}
-
-.row3{
-    margin: auto;
 }
 
 table, th, td{
