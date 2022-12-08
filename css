@@ -1,5 +1,5 @@
 html{
-    font-size: 63%;
+    font-size: 20px;
 }
 
 .title{
@@ -19,45 +19,50 @@ html{
     word-spacing: .8px;
     animation: blinker 3s step-start infinite;
 }
+@keyframes blinker {
+    25% {
+      opacity: 0;
+    }
+}
 
 .main{
     margin: auto;
     text-align: center;
 }
 
-.row1{
+.row{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     padding: 1px;
     border-bottom: black solid .2px;
-    height: 800px;
+    height: 700px;
 }
 
-.row1 ,.row2{
-    background: url('pictures/table.jpeg') no-repeat center center/cover;
+.row ,.row2{
+    background: url('pictures/TABLE2.jpeg') no-repeat center center/cover;
     width: auto;
     color: white;
 }
 
-.row1 div{
-    padding: 1rem;
+.row div{
+    padding: 16px;
     text-align: center;
     flex: 4;
 }
 
-.row1 h2{
-    font-size: 4rem;
+.row h2{
+    font-size: 32px;
 }
 
-#your-box{
+#player{
     border-right: black solid 1px;
 }
 
-#your-box img, #dealer-box img{
-    height: 20rem;
-    width: 13rem;
-    padding: 1rem;
+#player img, #dealer img{
+    height: 320px;
+    width: 200px;
+    padding: 16px;
 }
 
 .row2{
@@ -104,5 +109,9 @@ table, th, td{
 
 table{
     margin: auto;
-    margin-bottom: 20rem;
+    margin-bottom: 340px;
+}
+*{
+    margin: 0;
+    padding: 0;
 }
