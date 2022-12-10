@@ -110,9 +110,9 @@ function BJhit(){
     }
 }
 
-document.querySelector('#deal').addEventListener('click', BJdeal);
+document.querySelector('#deal').addEventListener('click', BjDealer);
 
-function BJdeal(){
+function BjDealer(){
 
     if(You['score']=== 0){
         alert('Hit Me ');
