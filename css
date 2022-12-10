@@ -1,18 +1,15 @@
 html{
     font-size: 20px;
 }
-
-.title{
-    text-align: center;
-    background: rgb(232,224,117);
-    background: linear-gradient(0deg,#ED213A33 0%,#93291E 15%);
-    color: gold;
-    font-family: Rockwell;
-    padding: 8px;
-    font-size: 100px;
-    word-spacing: 16px;
-    letter-spacing: 4px;
-}
+.header img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  width: 50%;
+  
+  }
+  
 #command {
     font-weight: 800;
     font-size: 50px;
@@ -35,12 +32,12 @@ html{
     flex-wrap: wrap;
     flex-direction: row;
     padding: 1px;
-    border-bottom: black solid .2px;
     height: 700px;
 }
 
-.row ,.row2{
+.row ,.row1{
     background: url('pictures/TABLE2.jpeg') no-repeat center center/cover;
+    background-repeat: no-repeat;
     width: auto;
     color: white;
 }
@@ -55,20 +52,34 @@ html{
     font-size: 32px;
 }
 
-#player{
-    border-right: black solid 1px;
-}
-
 #player img, #dealer img{
     height: 320px;
     width: 200px;
     padding: 16px;
 }
 
-.row2{
+.row1{
     display: flex;
     justify-content: space-around;
     margin-bottom: 1px;
+}
+
+.row1 h3{
+   font-size: 48px;
+}
+
+table, th, td{
+    padding: 6px;
+    border: solid 2px black;
+    font-size: 16px;
+     font-weight: 400;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+table{
+    margin: auto;
+    margin-bottom: 400px;
 }
 
 .buttons{
@@ -91,25 +102,6 @@ html{
 
 .buttons button:hover{
     cursor: pointer;
-    box-shadow: black 0px 0px 3px 2px;
-}
-
-.row3 h3{
-   font-size: 48px;
-}
-
-table, th, td{
-    padding: 8px;
-    border: solid 2px black;
-    font-size: 24px;
-     font-weight: 400;
-    padding-left: 2px;
-    padding-right: 2px;
-}
-
-table{
-    margin: auto;
-    margin-bottom: 340px;
 }
 *{
     margin: 0;

@@ -6,41 +6,46 @@
     <title>Black Jack</title>
 </head>
 <body>
-    <h1 class="title">BLACK JACK</h1>
+    <div class="header">
+       <h1> <img src="pictures/12-122309_transparent-blackjack-png-graphic-design-png-download.png" alt="Black Jack" /></h1>
+      
+      </div>
+
     <div class="main">
         <h2><span id="command">Let's Play</span></h2>
         <div class="row">
             <div id="player">
                 <h2>You: <span id="yourscore">0</span></h2>
             </div>
+
+
+            <div class="row2">
+                <h3>Scoreboard: </h3>
+                <table>
+                    <tr>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                        <th>Draws</th>
+                    </tr>
+                    <tr>
+                        <td><span id="wins">0</span></td>
+                        <td><span id="losses">0</span></td>
+                        <td><span id="draws">0</span></td>
+                    </tr>
+                </table>
+            </div>
+
             <div id="dealer">
                 <h2>Dealer: <span id="dealerscore">0</span></h2>
             </div>
         </div>
-        <div class="row2">
+        <div class="row1">
             <div class="buttons">
-                <button class="hit-me" id="hit" onmouseover="tink.play()" > Hit </button> 
-                <button class="I-will-stand" id="stand" onmouseover="tink.play()">Stand</button>
-                <button class="Next" id="deal" onmouseover="tink.play()">Deal</button>
+                <button class="hit-me" id="hit" onmouseover= > Hit </button> 
+                <button class="I-will-stand" id="stand" onmouseover=>Stand</button>
+                <button class="Next" id="deal" onmouseover= >Deal</button>
             </div>
         </div>
-        <div class="row3">
-            <h3>Scoreboard: </h3>
-            <table>
-                <tr>
-                    <th>Wins</th>
-                    <th>Losses</th>
-                    <th>Draws</th>
-                </tr>
-                <tr>
-                    <td><span id="wins">0</span></td>
-                    <td><span id="losses">0</span></td>
-                    <td><span id="draws">0</span></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
     <script src="js"></script>
 </body>
 </html>

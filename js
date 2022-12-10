@@ -8,16 +8,16 @@ let blackJGame = {
 
     'wins':0,
     'losses':0,
-    'draws':0
+    'draws':0,
 };
 const You = blackJGame['you'];
 const Dealer = blackJGame['dealer'];
-
+//hopefully to draw a card
 function drawCard(activeplayer) {
     const randomNumber = Math.floor(Math.random() * (blackJGame['cards'].length));
     const currentCard = blackJGame['cards'].splice(randomNumber, 1);
     let card = document.createElement('img');
-    card.src = `pictures${currentCard}.png`;
+    card.src = `./pictures/${currentCard}.png`;
     document.querySelector(activeplayer['div']).appendChild(card);
     
     updateScore(currentCard, activeplayer);
@@ -25,7 +25,6 @@ function drawCard(activeplayer) {
     showScore(activeplayer);
     
 }
-
 function updateScore(currentcard, activeplayer){
     if(currentcard == 'AC' || currentcard == 'AD' || currentcard == 'AH' || currentcard == 'AS'){
         if((activeplayer['score'] + blackJGame['cardsmap'][currentcard][1]) <= 21){
@@ -40,18 +39,17 @@ function updateScore(currentcard, activeplayer){
         activeplayer['score'] += blackJGame['cardsmap'][currentcard];
     }   
 }
-
 function showScore(activeplayer){
-    if(activeplayer['score']>21){
+    if(activeplayer['score']> 21){
         document.querySelector(activeplayer['scoreSpan']).textContent = 'BUST!';
-        document.querySelector(activeplayer['scoreSpan']).style.color = 'yellow';
+        document.querySelector(activeplayer['scoreSpan']).style.color = 'Red';
     }
     else{
         document.querySelector(activeplayer['scoreSpan']).textContent = activeplayer['score'];
     }
 }
-function whoIsWinner(){
-    let winner;
+function findwinner(){
+    let winner
 
     if(You['score']<=21){
         if(Dealer['score']<You['score'] || Dealer['score']>21){
@@ -84,25 +82,24 @@ function showresults(winner){
     else if(winner == Dealer){
         document.querySelector('#command').textContent = "You Lost!";
         document.querySelector('#command').style.color = 'red';
-        loseSound.play();
     }
     else{
         document.querySelector('#command').textContent = 'You Drew!';
         document.querySelector('#command').style.color = 'yellow';
-        drawSound.play();
     }
 
 }
 
+//scoreboard is not updating... i am not sure how to get it to update
 function scoreboard(){
     document.querySelector('#wins').textContent = blackJGame['wins'];
     document.querySelector('#losses').textContent = blackJGame['losses'];
     document.querySelector('#draws').textContent = blackJGame['draws'];
 }
 
-document.querySelector('#hit').addEventListener('click', BJhit);
+document.querySelector('#hit').addEventListener('click', HitMe);
 
-function BJhit(){
+function HitMe(){
     if(Dealer['score'] === 0){
         if(You['score']<=21){
             drawCard(You);
@@ -146,9 +143,9 @@ function BjDealer(){
     }
 }
 
-document.querySelector('#stand').addEventListener('click', BJstand)
+document.querySelector('#stand').addEventListener('click',Stand)
 
-function BJstand(){
+function Stand(){
     if(You['score']===0){
         alert('Hit me');
     }
