@@ -26,7 +26,7 @@ function drawCard(activeplayer) {
     
 }
 
-//once again scorecard and finishing score card on line 145.
+//updating my the score card in the center. 
 function updateScore(currentcard, activeplayer){
     if(currentcard == 'AC' || currentcard == 'AD' || currentcard == 'AH' || currentcard == 'AS'){
         if((activeplayer['score'] + blackJGame['cardsmap'][currentcard][1]) <= 21){
@@ -62,7 +62,7 @@ function showScore(activeplayer){
         document.querySelector(activeplayer['scoreSpan']).textContent = activeplayer['score'];
     }
 }
-//how to find winner
+//winner loser or is it a draw? 
 function findwinner(){
     let winner
 
@@ -98,7 +98,7 @@ function showresults(winner){
         document.querySelector('#command').textContent = "You Lost!";
         document.querySelector('#command').style.color = 'red';
     }
-    else{
+    else{// prompt if you drew
         document.querySelector('#command').textContent = 'You Drew!';
         document.querySelector('#command').style.color = 'yellow';
     }
