@@ -26,7 +26,7 @@ function drawCard(activeplayer) {
     
 }
 
-//once again scorecard and finishing score card on line 97 and 145 to finish
+//once again scorecard and finishing score card on line 145.
 function updateScore(currentcard, activeplayer){
     if(currentcard == 'AC' || currentcard == 'AD' || currentcard == 'AH' || currentcard == 'AS'){
         if((activeplayer['score'] + blackJGame['cardsmap'][currentcard][1]) <= 21){
@@ -41,6 +41,17 @@ function updateScore(currentcard, activeplayer){
         activeplayer['score'] += blackJGame['cardsmap'][currentcard];
     }   
 }
+
+//scoreboard 
+function scoreboard(){
+    document.querySelector('#wins').textContent = blackJGame['wins'];
+    document.querySelector('#losses').textContent = blackJGame['losses'];
+    document.querySelector('#draws').textContent = blackJGame['draws'];
+}
+
+document.querySelector('#hit').addEventListener('click', HitMe);
+
+
 //find "bust" if <21
 function showScore(activeplayer){
     if(activeplayer['score']> 21){
@@ -93,16 +104,6 @@ function showresults(winner){
     }
 
 }
-
-//scoreboard 
-function scoreboard(){
-    document.querySelector('#wins').textContent = blackJGame['wins'];
-    document.querySelector('#losses').textContent = blackJGame['losses'];
-    document.querySelector('#draws').textContent = blackJGame['draws'];
-}
-
-document.querySelector('#hit').addEventListener('click', HitMe);
-
 //draw card
 function HitMe(){
     if(Dealer['score'] === 0){
@@ -137,11 +138,7 @@ function BjDealer(){
         dealerimg[i].remove();
     }
 
-    blackJGame['cards'] = ['2C','3C','4C','5C','6C','7C','8C','9C','10C','KC','QC','JC','AC','2D','3D','4D','5D','6D','7D','8D','9D','10D','KD','QD','JD','AD','2H','3H','4H','5H','6H','7H','8H','9H','10H','KH','QH','JH','AH','2S','3S','4S','5S','6S','7S','8S','9S','10S','KS','QS','JS','AS'];
-
-
-    //scoreboard 
-
+    // what your cards equate to. continuously updating 
     You['score'] = 0;
     document.querySelector(You['scoreSpan']).textContent = You['score'];
     document.querySelector(You['scoreSpan']).style.color = 'white';
