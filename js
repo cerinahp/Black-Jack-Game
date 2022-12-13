@@ -112,17 +112,16 @@ function HitMe(){
         }
     }
 }
-
+//'messages to hit me' must press hit me to move forward
 document.querySelector('#deal').addEventListener('click', BjDealer);
 
-//'messages to hit me' must press hit me to move forward
 function BjDealer(){
 
     if(You['score']=== 0){
-        alert('Hit Me ');
+        alert('you go first, Hit Me');
     }
     else if(Dealer['score']===0){
-        alert('Stand, dealers turn');
+        alert('press Stand, it is the dealers turn');
     }
     else{
 
@@ -155,7 +154,7 @@ document.querySelector('#stand').addEventListener('click',Stand)
 
 function Stand(){
     if(You['score']===0){
-        alert('Hit me');
+        alert('you go first, Hit me');// must hit me first. 
     }
     else{
         while(Dealer['score']<16){
