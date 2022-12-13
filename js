@@ -1,11 +1,11 @@
 let blackJGame = {
     'you': {'scoreSpan': '#yourscore' , 'div': '#player', 'score': 0},
     'dealer': {'scoreSpan': '#dealerscore' , 'div': '#dealer', 'score': 0},
-    
+    //map had to rename all the card and picture to match 
     'cards': ['2C','3C','4C','5C','6C','7C','8C','9C','10C','KC','QC','JC','AC','2D','3D','4D','5D','6D','7D','8D','9D','10D','KD','QD','JD','AD','2H','3H','4H','5H','6H','7H','8H','9H','10H','KH','QH','JH','AH','2S','3S','4S','5S','6S','7S','8S','9S','10S','KS','QS','JS','AS'],
-    
+    //card values
     'cardsmap': {'2C':2,'3C':3,'4C':4,'5C':5,'6C':6,'7C':7,'8C':8,'9C':9,'10C':10,'KC':10,'QC':10,'JC':10,'AC':[1, 11],'2D':2,'3D':3,'4D':4,'5D':5,'6D':6,'7D':7,'8D':8,'9D':9,'10D':10,'KD':10,'QD':10,'JD':10,'AD':[1, 11],'2H':2,'3H':3,'4H':4,'5H':5,'6H':6,'7H':7,'8H':8,'9H':9,'10H':10,'KH':10,'QH':10,'JH':10,'AH':[1, 11],'2S':2,'3S':3,'4S':4,'5S':5,'6S':6,'7S':7,'8S':8,'9S':9,'10S':10,'KS':10,'QS':10,'JS':10,'AS':[1, 11]},
-
+//score starting value 
     'wins':0,
     'losses':0,
     'draws':0,
@@ -25,6 +25,8 @@ function drawCard(activeplayer) {
     showScore(activeplayer);
     
 }
+
+//once again scorecard and finishing score card on line 97 and 145 to finish
 function updateScore(currentcard, activeplayer){
     if(currentcard == 'AC' || currentcard == 'AD' || currentcard == 'AH' || currentcard == 'AS'){
         if((activeplayer['score'] + blackJGame['cardsmap'][currentcard][1]) <= 21){
@@ -39,6 +41,7 @@ function updateScore(currentcard, activeplayer){
         activeplayer['score'] += blackJGame['cardsmap'][currentcard];
     }   
 }
+//find "bust" if <21
 function showScore(activeplayer){
     if(activeplayer['score']> 21){
         document.querySelector(activeplayer['scoreSpan']).textContent = 'BUST!';
@@ -48,6 +51,7 @@ function showScore(activeplayer){
         document.querySelector(activeplayer['scoreSpan']).textContent = activeplayer['score'];
     }
 }
+//how to find winner
 function findwinner(){
     let winner
 
@@ -73,7 +77,7 @@ function findwinner(){
     }
     return winner;
 }
-
+//determination if you won or lost etc...
 function showresults(winner){
     if(winner == You){
         document.querySelector('#command').textContent = 'You Won!';
@@ -90,7 +94,7 @@ function showresults(winner){
 
 }
 
-//scoreboard is not updating... i am not sure how to get it to update
+//scoreboard 
 function scoreboard(){
     document.querySelector('#wins').textContent = blackJGame['wins'];
     document.querySelector('#losses').textContent = blackJGame['losses'];
@@ -99,6 +103,7 @@ function scoreboard(){
 
 document.querySelector('#hit').addEventListener('click', HitMe);
 
+//draw card
 function HitMe(){
     if(Dealer['score'] === 0){
         if(You['score']<=21){
@@ -109,6 +114,7 @@ function HitMe(){
 
 document.querySelector('#deal').addEventListener('click', BjDealer);
 
+//'messages to hit me' must press hit me to move forward
 function BjDealer(){
 
     if(You['score']=== 0){
@@ -118,6 +124,8 @@ function BjDealer(){
         alert('Stand, dealers turn');
     }
     else{
+
+//cards dealt to you and dealer
 
     let yourimg = document.querySelector('#player').querySelectorAll('img');
     let dealerimg = document.querySelector('#dealer').querySelectorAll('img');
@@ -130,6 +138,9 @@ function BjDealer(){
     }
 
     blackJGame['cards'] = ['2C','3C','4C','5C','6C','7C','8C','9C','10C','KC','QC','JC','AC','2D','3D','4D','5D','6D','7D','8D','9D','10D','KD','QD','JD','AD','2H','3H','4H','5H','6H','7H','8H','9H','10H','KH','QH','JH','AH','2S','3S','4S','5S','6S','7S','8S','9S','10S','KS','QS','JS','AS'];
+
+
+    //scoreboard 
 
     You['score'] = 0;
     document.querySelector(You['scoreSpan']).textContent = You['score'];
