@@ -137,14 +137,14 @@ function BjDealer(){
         dealerimg[i].remove();
     }
 
-    // what your cards equate to. continuously updating 
+    // what your cards equate to. continuously updating with cards
     You['score'] = 0;
     document.querySelector(You['scoreSpan']).textContent = You['score'];
     document.querySelector(You['scoreSpan']).style.color = 'white';
     Dealer['score'] = 0;
     document.querySelector(Dealer['scoreSpan']).textContent = Dealer['score'];
     document.querySelector(Dealer['scoreSpan']).style.color = 'white';
-
+    //lets play at top
     document.querySelector('#command').textContent = "Let's Play";
     document.querySelector('#command').style.color = 'black';
     }
